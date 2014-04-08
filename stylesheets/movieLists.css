@@ -1,0 +1,25 @@
+body{
+	padding-top: 60px;
+}
+
+thead tr th {
+	font-family: Helvetica Neue, Arial, Menlo;
+	font-size: 20px;
+}
+
+tbody tr.movie_details td{
+	height: 77px;
+	vertical-align: middle;
+	font-family: Helvetica Neue, Arial, Menlo;
+	font-size: 16px;
+}
+
+tbody tr.movie_details td.ratings{
+	text-align: center;
+}
+
+.movie_year {
+	font-size: 14px;
+	width: 1em;
+	text-overflow:ellipsis;
+}

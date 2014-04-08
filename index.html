@@ -1,16 +1,42 @@
-<!Doctype HTML>
+<!DOCTYPE html>
 <html>
 	<head>
 		<script type="text/javascript" src="js/angular.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/movieLists.css">
 	</head>
 	<body ng-app>
-		<input ng-model="searchText" type="text" value="" placeholder="Enter movie name"/>
-		<div>
-			<ul ng-controller="MoviesListController">
-				<li ng-repeat="movie in movies | filter:searchText">
-					<h4><img src="{{movie.imgUrl}}" />{{movie.rank}}{{movie.name}}</h4>
-				</li>
-			</ul>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner navbar-fixed-top">
+					<div class="brand">Movie Listing</div>
+					<form class="navbar-search pull-right">
+						<input class="search-query" ng-model="searchText" type="text" value="" placeholder="Enter movie name"/>
+					</form>
+				</div>
+			</div>
+			<div>
+				<table class="table table-hover" ng-controller="MoviesListController">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Image</th>
+							<th>Title</th>
+							<th>IMDB Rating</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="movie_details" ng-repeat="movie in movies | filter:searchText">
+							<a>
+								<td>{{movie.rank}}</td>
+								<td><img class="img-polaroid img-rounded"src="{{movie.imgUrl}}" /></td>
+								<td>{{movie.name}} <span class="movie_year">({{movie.date | limitTo:4}})</span></td>
+								<td class="ratings">{{movie.rating | number:1}}</td>
+							</a>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</body>
 

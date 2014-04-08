@@ -29,7 +29,7 @@
 						<tr class="movie_details" ng-repeat="movie in movies | filter:searchText">
 							<a>
 								<td>{{movie.rank}}</td>
-								<td><img class="img-polaroid img-rounded"src="{{movie.imgUrl}}" /></td>
+								<td><img class="img-polaroid img-rounded" ng-src="{{movie.imgUrl}}" /></td>
 								<td>{{movie.name}} <span class="movie_year">({{movie.date | limitTo:4}})</span></td>
 								<td class="ratings">{{movie.rating | number:1}}</td>
 							</a>

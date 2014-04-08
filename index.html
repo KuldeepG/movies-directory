@@ -21,28 +21,7 @@
 					</form>
 				</div>
 			</div>
-			<div>
-				<table class="table table-hover" ng-controller="MovieListController">
-					<thead>
-						<tr>
-							<th>#</th>
-							<th>Image</th>
-							<th>Title</th>
-							<th>IMDB Rating</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="movie_details" ng-repeat="movie in movies | filter:searchText">
-							<a>
-								<td>{{movie.rank}}</td>
-								<td><img class="img-polaroid img-rounded" ng-src="{{movie.imgUrl}}" /></td>
-								<td>{{movie.name}} <span class="movie_year">({{movie.date | limitTo:4}})</span></td>
-								<td class="ratings">{{movie.rating | number:1}}</td>
-							</a>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			<div ng-view></div>
 		</div>
 	</body>
 </html>

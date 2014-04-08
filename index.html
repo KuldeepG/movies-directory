@@ -1,20 +1,22 @@
 <!Doctype HTML>
 <html>
 	<head>
+		<script type="text/javascript" src="js/angular.min.js"></script>
 	</head>
-	<body>
-		<form>
-			<input type="text" value="" placeholder="Enter todo task here"/>
-			<input type="submit" value="Add Task" />
-		</form>
+	<body ng-app>
+		<input ng-model="searchText" type="text" value="" placeholder="Enter movie name"/>
 		<div>
-			<ul>
-				<li>Something</li>
-				<li>Something else 1</li>
-				<li>Something else 2</li>
-				<li>Something else 3</li>
-				<li>Something else 3</li>
+			<ul ng-controller="MoviesListController">
+				<li ng-repeat="movie in movies | filter:searchText">
+					<h4><img src="{{movie.imgUrl}}" />{{movie.rank}}{{movie.name}}</h4>
+				</li>
 			</ul>
 		</div>
 	</body>
+
+	<script type="text/javascript">
+		function MoviesListController($scope){
+			$scope.movies = [{"imgUrl":"http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX34_CR0,0,34,50_.jpg","rating":9.209,"rank":"1.","name":"The Shawshank Redemption","date":"1994-10-14","votes":1191522},{"imgUrl":"http://ia.media-imdb.com/images/M/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX34_CR0,0,34,50_.jpg","rating":9.174,"rank":"2.","name":"The Godfather","date":"1972-03-24","votes":826398},{"imgUrl":"http://ia.media-imdb.com/images/M/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX34_CR0,0,34,50_.jpg","rating":9.015,"rank":"3.","name":"The Godfather: Part II","date":"1974-12-20","votes":545035}];
+		}
+	</script>
 </html>

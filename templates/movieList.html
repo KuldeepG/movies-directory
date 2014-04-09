@@ -9,12 +9,10 @@
 	</thead>
 	<tbody>
 		<tr class="movie_details" ng-repeat="movie in movies | filter:searchText">
-			<a>
-				<td>{{movie.rank}}</td>
-				<td><img class="img-polaroid img-rounded" ng-src="{{movie.imgUrl}}" /></td>
-				<td><a ng-href="#/details/{{movies.indexOf(movie)}}">{{movie.name}} <span class="movie_year">({{movie.date | limitTo:4}})</span></a></td>
-				<td class="ratings">{{movie.rating | number:1}}</td>
-			</a>
+			<td>{{movie.rank}}</td>
+			<td><img class="img-polaroid img-rounded" ng-src="{{movie.imgUrl}}" /></td>
+			<td><a ng-href="#/details/{{movies.indexOf(movie)}}">{{movie.name}} <span class="movie_year">({{movie.date | limitTo:4}})</span></a></td>
+			<td class="ratings">{{movie.rating | number:1}}</td>
 		</tr>
 	</tbody>
 </table>

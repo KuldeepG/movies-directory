@@ -5,3 +5,9 @@ moviesControllers.controller('MovieListController', function($scope, $http){
 		$scope.movies = data;
 	});
 });
+
+moviesControllers.controller('MovieDetailController', function($scope, $http, $routeParams){
+	$http.get("data/movieDetails.json").success(function(data){
+		$scope.movie = data[$routeParams.movieId];
+	});	
+});

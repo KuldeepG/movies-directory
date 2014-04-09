@@ -1,5 +1,6 @@
 body{
 	padding-top: 60px;
+	color: #377;
 }
 
 thead tr th {
@@ -18,8 +19,39 @@ tbody tr.movie_details td.ratings{
 	text-align: center;
 }
 
+tbody tr.movie_details td a {
+	text-decoration: none;
+	color: #377;
+}
+
 .movie_year {
 	font-size: 14px;
 	width: 1em;
 	text-overflow:ellipsis;
+}
+
+.details {
+	height: 85%;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.details img.img-polaroid {
+	padding: 20px;
+	margin: 20px 40px 20px 20px;
+}
+
+.details .movie_details {
+	padding:0;
+	margin: 10px 0 0 20px;
+}
+
+.movie_director {
+	margin-top: 50px;
+	display: inline-block;
+	position:relative;
+}
+
+.back:before {
+	content: '\2B05';
 }
